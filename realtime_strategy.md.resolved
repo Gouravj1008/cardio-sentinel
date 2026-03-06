@@ -1,0 +1,47 @@
+# Strategic Plan: Real-Time AI Health Monitoring
+
+This plan outlines the steps required to transition CardioSentinel AI from a static, request-based system to a streaming, real-time health monitoring platform.
+
+## Proposed Architecture Changes
+
+### 1. Real-Time Communication Layer (WebSockets)
+- **Goal**: Push AI insights and alerts to the frontend instantly without page refreshes.
+- **Tech**: Use `socket.io` for Node.js.
+- **Action**: Initialize Socket.io in [server.js](file:///e:/Cardio%20sentinel.ai/backend/server.js) and emit events when [HealthRecords](file:///e:/Cardio%20sentinel.ai/backend/controllers/healthController.js#71-102) are updated or `Alerts` are triggered in [alertService.js](file:///e:/Cardio%20sentinel.ai/backend/services/alertService.js).
+
+### 2. Live Data Ingestion Service
+- **Goal**: Accept high-frequency streaming data (e.g., ECG at 250Hz).
+- **Tech**: Create a `/api/stream/ingest` endpoint or use MQTT for IoT devices.
+- **Action**: Implement a buffer logic to collect data chunks before sending them to the ML service for "window-based" analysis.
+
+### 3. Real-Time Dashboard UI
+- **Goal**: Display live scrolling ECG waves and dynamic risk scores.
+- **Tech**: Update the frontend to use `Recharts` or `Canvas-based` drawing for performance.
+- **Action**: Connect the Dashboard component to the WebSocket server to listen for `LIVE_DATA` and `AI_INSIGHT` events.
+
+### 4. Continuous AI Analysis
+- **Goal**: The ML service must process data streams, not just static records.
+- **Tech**: Implement a "sliding window" approach in the Python ML service.
+- **Action**: Update [ml-models/main.py](file:///e:/Cardio%20sentinel.ai/ml-models/main.py) to handle stream processing.
+
+---
+
+## Technical Roadmap
+
+### Phase 1: Simulation (Current Next Step)
+- [ ] Implement a **Mock Data Generator** script to simulate real ECG sensor data.
+- [ ] Add **Socket.io** to the backend for real-time alerting.
+
+### Phase 2: Hardware Gateway
+- [ ] Integrate with a mobile app or gateway that reads from a real ECG patch (via Bluetooth).
+- [ ] Use **Redis Pub/Sub** to bridge high-frequency data between the ingestion layer and the analysis layer.
+
+### Phase 3: High-Frequency Visualization
+- [ ] Implement a **Smooth Scrolling ECG Component** in `Patient.jsx`.
+
+---
+
+## User Review Required
+
+> [!IMPORTANT]
+> To proceed, I recommend starting with **Phase 1: Simulation** to prove the real-time flow. Would you like me to start implementing the WebSocket layer and a mock data generator?
