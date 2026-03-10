@@ -1,10 +1,15 @@
 services:
   mongo:
     image: mongo:6
+    container_name: cardio-mongo
     ports:
       - "27017:27017"
     environment:
       MONGO_INITDB_DATABASE: cardio-sentinel
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - cardio-network
     healthcheck:
       test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
       interval: 10s
@@ -13,8 +18,13 @@ services:
 
   redis:
     image: redis:7-alpine
+    container_name: cardio-redis
     ports:
       - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - cardio-network
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 10s
@@ -23,13 +33,21 @@ services:
   
   ml-service:
     build: ./ml-models
+    container_name: cardio-ml
     ports:
       - "8000:8000"
     depends_on:
-      - mongo
+      mongo:
+        condition: service_healthy
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/cardio-sentinel
+    networks:
+      - cardio-network
+    restart: unless-stopped
   
   backend:
     build: ./backend
+    container_name: cardio-backend
     ports:
       - "5000:5000"
     depends_on:
@@ -43,3 +61,30 @@ services:
       REDIS_PORT: 6379
       NODE_ENV: development
       PORT: 5000
+      JWT_SECRET: your_super_secret_jwt_key_change_this_in_production
+      JWT_EXPIRE: 30d
+      ML_SERVICE_URL: http://ml-service:8000
+    networks:
+      - cardio-network
+    restart: unless-stopped
+
+  frontend:
+    build: ./backend/frontend
+    container_name: cardio-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_URL=http://localhost:5000
+    networks:
+      - cardio-network
+    restart: unless-stopped
+
+networks:
+  cardio-network:
+    driver: bridge
+
+volumes:
+  mongo-data:
+  redis-data:

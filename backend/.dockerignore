@@ -1,0 +1,13 @@
+node_modules
+npm-debug.log
+__pycache__
+*.pyc
+.env
+.venv
+venv
+.git
+.gitignore
+*.md
+.vscode
+.idea
+*.log
