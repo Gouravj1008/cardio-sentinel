@@ -135,9 +135,38 @@ NODE_ENV=development
 JWT_SECRET=your_super_secret_jwt_key_change_this_in_production
 JWT_EXPIRE=30d
 
+# Google OAuth
+GOOGLE_CLIENT_ID=your_google_oauth_web_client_id.apps.googleusercontent.com
+
 # ML Service
 ML_SERVICE_URL=http://localhost:8000
 ```
+
+### Frontend Environment Variables (`backend/frontend/.env`)
+
+Create `backend/frontend/.env` using `backend/frontend/.env.example` as a template:
+
+```ini
+VITE_API_BASE_URL=http://localhost:5000
+VITE_GOOGLE_CLIENT_ID=your_google_oauth_web_client_id.apps.googleusercontent.com
+```
+
+### Google Sign-In Setup (Required)
+
+1. Go to Google Cloud Console and open (or create) a project.
+2. Configure OAuth consent screen (External/Internal) and add test users while in testing mode.
+3. Create OAuth Client ID of type **Web application**.
+4. Add Authorized JavaScript origins:
+   - `http://localhost:5173`
+   - your production frontend origin (if any)
+5. Copy the generated client ID and set it in:
+   - `backend/.env` as `GOOGLE_CLIENT_ID`
+   - `backend/frontend/.env` as `VITE_GOOGLE_CLIENT_ID`
+6. Restart backend and frontend after updating environment variables.
+
+Notes:
+- This project verifies Google `id_token` server-side at `POST /api/auth/google`.
+- For local development with GIS popup/One Tap, use `http://localhost` origins and avoid mismatched ports.
 
 ### Docker Environment Variables
 

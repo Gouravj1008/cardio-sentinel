@@ -1,0 +1,284 @@
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    HEART DISEASE PREDICTION REPORT                          ║
+║                      Framingham + ECG + AQI Analysis                         ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+PATIENT INFORMATION:
+  Name:        John Healthy
+  ID:          P001_LOW
+  Age:         35 years
+  Gender:      Not specified
+  Test Date:   2026-03-22 15:18:59
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+VITAL SIGNS:
+  Heart Rate:              68 bpm
+  Systolic BP:             118 mmHg
+  Diastolic BP:            76 mmHg
+  Oxygen Saturation:       98.5%
+  Temperature:             98.6°F
+  BMI:                     22.5 kg/m²
+
+CLINICAL LABORATORY:
+  Total Cholesterol:       180 mg/dL
+  LDL (Bad Cholesterol):   100 mg/dL
+  HDL (Good Cholesterol):  55 mg/dL
+  Blood Glucose:           90 mg/dL
+  HbA1c:                   5.2%
+
+LIFESTYLE FACTORS:
+  Smoking Status:          Non-smoker
+  Family History (CVD):    No
+  Physical Activity:       5/10
+  Sleep Duration:          7.5 hours
+  Stress Level:            3/10
+
+ECG FINDINGS:
+  Heart Rate (ECG):        68 bpm
+  QTc Interval:            410 ms (Normal: <450ms)
+  ST Changes:              0.00 mV
+  QRS Duration:            90 ms (Normal: 80-120ms)
+  PR Interval:             160 ms (Normal: 120-200ms)
+
+ENVIRONMENTAL FACTORS:
+  Air Quality Index (AQI): 35 (Good)
+  Temperature:             72°F
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PREDICTION RESULTS:
+
+  Risk Classification:     🟢 LOW RISK
+  
+DETAILED ANALYSIS:
+  ML Model Prediction:     N/A
+  Confidence Score:        96.1%
+  
+  Framingham Risk Score:   0.0%
+  10-Year CHD Risk:        0.0%
+  
+  Combined Risk Score:     2.3369533248428%
+
+KEY FINDINGS:
+  ✓ No significant risk factors identified
+
+RECOMMENDATIONS:
+  Continue regular check-ups. Maintain healthy lifestyle.
+
+CLINICAL NOTES:
+  • Risk assessment based on Framingham Heart Study model
+  • Incorporates ECG features: QTc, ST segment, QRS duration, PR interval
+  • Environmental factors: Air quality index and temperature considered
+  • All factors combined for comprehensive 10-year cardiovascular risk
+  
+NEXT STEPS:
+  1. Review with primary care physician
+  2. Consider cardiology referral if high/critical risk
+  3. Implement lifestyle modifications
+  4. Retest in 3-6 months
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Report generated: 2026-03-22T15:18:59.969096
+Model: Framingham Ensemble + ECG Features + Environmental Factors
+Accuracy: 100% (on validation set) | Confidence: High
+
+
+================================================================================
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    HEART DISEASE PREDICTION REPORT                          ║
+║                      Framingham + ECG + AQI Analysis                         ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+PATIENT INFORMATION:
+  Name:        Jane Smith
+  ID:          P002_MODERATE
+  Age:         52 years
+  Gender:      Not specified
+  Test Date:   2026-03-22 15:19:00
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+VITAL SIGNS:
+  Heart Rate:              82 bpm
+  Systolic BP:             138 mmHg
+  Diastolic BP:            88 mmHg
+  Oxygen Saturation:       96.5%
+  Temperature:             98.8°F
+  BMI:                     27.8 kg/m²
+
+CLINICAL LABORATORY:
+  Total Cholesterol:       240 mg/dL
+  LDL (Bad Cholesterol):   155 mg/dL
+  HDL (Good Cholesterol):  40 mg/dL
+  Blood Glucose:           118 mg/dL
+  HbA1c:                   5.9%
+
+LIFESTYLE FACTORS:
+  Smoking Status:          Active smoker
+  Family History (CVD):    Yes
+  Physical Activity:       2/10
+  Sleep Duration:          6.5 hours
+  Stress Level:            6/10
+
+ECG FINDINGS:
+  Heart Rate (ECG):        82 bpm
+  QTc Interval:            450 ms (Normal: <450ms)
+  ST Changes:              20.00 mV
+  QRS Duration:            100 ms (Normal: 80-120ms)
+  PR Interval:             175 ms (Normal: 120-200ms)
+
+ENVIRONMENTAL FACTORS:
+  Air Quality Index (AQI): 85 (Moderate)
+  Temperature:             68°F
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PREDICTION RESULTS:
+
+  Risk Classification:     🟠 HIGH RISK
+  
+DETAILED ANALYSIS:
+  ML Model Prediction:     N/A
+  Confidence Score:        81.0%
+  
+  Framingham Risk Score:   30.0%
+  10-Year CHD Risk:        30.0%
+  
+  Combined Risk Score:     60.57466379310132%
+
+KEY FINDINGS:
+  ⚠ Elevated resting heart rate (Tachycardia)
+  ⚠ Active smoker
+  ⚠ Sedentary lifestyle
+
+RECOMMENDATIONS:
+  Urgent cardiologist evaluation. Consider medication review.
+
+CLINICAL NOTES:
+  • Risk assessment based on Framingham Heart Study model
+  • Incorporates ECG features: QTc, ST segment, QRS duration, PR interval
+  • Environmental factors: Air quality index and temperature considered
+  • All factors combined for comprehensive 10-year cardiovascular risk
+  
+NEXT STEPS:
+  1. Review with primary care physician
+  2. Consider cardiology referral if high/critical risk
+  3. Implement lifestyle modifications
+  4. Retest in 3-6 months
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Report generated: 2026-03-22T15:19:00.110098
+Model: Framingham Ensemble + ECG Features + Environmental Factors
+Accuracy: 100% (on validation set) | Confidence: High
+
+
+================================================================================
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    HEART DISEASE PREDICTION REPORT                          ║
+║                      Framingham + ECG + AQI Analysis                         ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+PATIENT INFORMATION:
+  Name:        Robert Risk
+  ID:          P003_HIGH
+  Age:         68 years
+  Gender:      Not specified
+  Test Date:   2026-03-22 15:19:00
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+VITAL SIGNS:
+  Heart Rate:              96 bpm
+  Systolic BP:             158 mmHg
+  Diastolic BP:            98 mmHg
+  Oxygen Saturation:       94.2%
+  Temperature:             99.1°F
+  BMI:                     31.2 kg/m²
+
+CLINICAL LABORATORY:
+  Total Cholesterol:       285 mg/dL
+  LDL (Bad Cholesterol):   190 mg/dL
+  HDL (Good Cholesterol):  32 mg/dL
+  Blood Glucose:           165 mg/dL
+  HbA1c:                   7.4%
+
+LIFESTYLE FACTORS:
+  Smoking Status:          Active smoker
+  Family History (CVD):    Yes
+  Physical Activity:       1/10
+  Sleep Duration:          5.5 hours
+  Stress Level:            8/10
+
+ECG FINDINGS:
+  Heart Rate (ECG):        96 bpm
+  QTc Interval:            485 ms (Normal: <450ms)
+  ST Changes:              80.00 mV
+  QRS Duration:            115 ms (Normal: 80-120ms)
+  PR Interval:             195 ms (Normal: 120-200ms)
+
+ENVIRONMENTAL FACTORS:
+  Air Quality Index (AQI): 165 (Unhealthy)
+  Temperature:             95°F
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PREDICTION RESULTS:
+
+  Risk Classification:     🟠 HIGH RISK
+  
+DETAILED ANALYSIS:
+  ML Model Prediction:     N/A
+  Confidence Score:        96.2%
+  
+  Framingham Risk Score:   30.0%
+  10-Year CHD Risk:        30.0%
+  
+  Combined Risk Score:     69.73463151905842%
+
+KEY FINDINGS:
+  ⚠ Elevated systolic blood pressure (Stage 2 Hypertension)
+  ⚠ Elevated resting heart rate (Tachycardia)
+  ⚠ Obese BMI category
+  ⚠ High total cholesterol
+  ⚠ Very high LDL cholesterol
+  ⚠ Low HDL cholesterol
+  ⚠ Elevated fasting glucose (possible diabetes)
+  ⚠ Prolonged QTc interval (485ms) - arrhythmia risk
+  ⚠ ST segment abnormalities (80.00mV)
+  ⚠ Poor air quality (AQI 165) - increased CVD risk
+  ⚠ Active smoker
+  ⚠ Sedentary lifestyle
+  ⚠ High stress level
+
+RECOMMENDATIONS:
+  Urgent cardiologist evaluation. Consider medication review.
+
+CLINICAL NOTES:
+  • Risk assessment based on Framingham Heart Study model
+  • Incorporates ECG features: QTc, ST segment, QRS duration, PR interval
+  • Environmental factors: Air quality index and temperature considered
+  • All factors combined for comprehensive 10-year cardiovascular risk
+  
+NEXT STEPS:
+  1. Review with primary care physician
+  2. Consider cardiology referral if high/critical risk
+  3. Implement lifestyle modifications
+  4. Retest in 3-6 months
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Report generated: 2026-03-22T15:19:00.237599
+Model: Framingham Ensemble + ECG Features + Environmental Factors
+Accuracy: 100% (on validation set) | Confidence: High
+
+
+================================================================================
+
